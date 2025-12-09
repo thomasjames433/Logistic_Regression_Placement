@@ -6,7 +6,7 @@
 
 **1. Sigmoid Function:**
 $$\sigma(z) = \frac{1}{1 + e^{-z}}$$
-*(Includes a sketch of the S-curve/Sigmoid function where $z=0 \rightarrow 0.5$)*
+*(Always returns values between 1 and 0)*
 
 **2. Hypothesis & Likelihood:**
 * **Parameters:** $\theta = [\theta_0, \theta_1, \dots]$
