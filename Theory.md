@@ -62,14 +62,39 @@ $$\theta := \theta - \alpha \nabla J(\theta)$$
 **Problem Setup:**
 * **$m = 3$** (3 students to train)
 * **Model Parameters ($\theta$):**
-$$\theta = \begin{bmatrix} -4 \\ 0.04 \\ 0.3 \\ 0.02 \end{bmatrix} \begin{aligned} &\leftarrow \text{Intercept} \\ &\leftarrow \text{Hours of Study} \\ &\leftarrow \text{Hours of Sleep} \\ &\leftarrow \text{Previous Test Score} \end{aligned}$$
+$$
+\theta = \begin{bmatrix} 
+-4 \\\\ 
+0.04 \\\\ 
+0.3 \\\\ 
+0.02 
+\end{bmatrix} 
+\begin{aligned} 
+& \leftarrow \text{Intercept} \\\\ 
+& \leftarrow \text{Hours of Study} \\\\ 
+& \leftarrow \text{Hours of Sleep} \\\\ 
+& \leftarrow \text{Previous Test Score} 
+\end{aligned}
+$$
 
 **Input Matrix ($X$):**
 Columns: $[1, \text{Study}, \text{Sleep}, \text{Score}]$
-$$X = \begin{bmatrix} 1 & 5 & 7 & 60 \\ 1 & 2 & 6 & 55 \\ 1 & 8 & 5 & 80 \end{bmatrix}$$
+$$
+X = \begin{bmatrix} 
+1 & 5 & 7 & 60 \\\\ 
+1 & 2 & 6 & 55 \\\\ 
+1 & 8 & 5 & 80 
+\end{bmatrix}
+$$
 
 **Target Labels ($y$):**
-$$y = \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}$$
+$$
+y = \begin{bmatrix} 
+1 \\\\ 
+0 \\\\ 
+1 
+\end{bmatrix}
+$$
 
 **Step 1: Compute Linear Model ($z = X\theta$)**
 $$z^{(1)} = 1(-4) + 5(0.04) + 7(0.3) + 60(0.02) = -0.5$$
@@ -82,7 +107,18 @@ $$h^{(2)} = 0.264$$
 $$h^{(3)} = 0.359$$
 
 **Step 3: Calculate Error Vector ($h - y$)**
-$$h - y = \begin{bmatrix} 0.3775 - 1 \\ 0.264 - 0 \\ 0.359 - 1 \end{bmatrix} = \begin{bmatrix} -0.6225 \\ 0.264 \\ -0.641 \end{bmatrix}$$
+$$
+h - y = \begin{bmatrix} 
+0.3775 - 1 \\\\ 
+0.264 - 0 \\\\ 
+0.359 - 1 
+\end{bmatrix} 
+= \begin{bmatrix} 
+-0.6225 \\\\ 
+0.264 \\\\ 
+-0.641 
+\end{bmatrix}
+$$
 
 **Step 4: Compute Gradient ($\nabla J(\theta)$)**
 Formula: $\frac{1}{m} X^T (h-y)$
